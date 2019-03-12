@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/black"
+    android:orientation="vertical"
+    tools:context=".camera2.Camera2Activity">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:background="#38383D"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageButton
+            android:id="@+id/ib_tips"
+            android:layout_width="44dp"
+            android:layout_height="match_parent"
+            android:backgroundTint="#38383D"
+            android:scaleType="centerInside"
+            android:src="@mipmap/ic_accid_line_car_1" />
+
+        <ImageButton
+            android:id="@+id/ib_flash"
+            android:layout_width="44dp"
+            android:layout_height="match_parent"
+            android:backgroundTint="#38383D"
+            android:scaleType="centerInside"
+            android:src="@mipmap/ic_take_flash_1"
+            app:layout_constraintEnd_toEndOf="parent" />
+    </android.support.constraint.ConstraintLayout>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.zsh27.camerademo.camera.AutoFitTextureView
+            android:id="@+id/texture_view"
+            android:layout_width="match_parent"
+            android:layout_height="400dp" />
+
+        <LinearLayout
+            android:id="@+id/ll_tip_root"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="@id/texture_view"
+            app:layout_constraintEnd_toEndOf="@id/texture_view"
+            app:layout_constraintStart_toStartOf="@id/texture_view"
+            app:layout_constraintTop_toTopOf="@+id/texture_view">
+
+            <TextView
+                android:id="@+id/tv_top_tip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="侧前方"
+                android:textColor="@android:color/white"
+                android:textSize="15sp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="150dp"
+                android:src="@mipmap/ic_picture_tip3" />
+
+            <TextView
+                android:id="@+id/tv_bottom_tip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="请您在保证安全下拍摄"
+                android:textColor="@android:color/white"
+                android:textSize="15sp" />
+        </LinearLayout>
+
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv_photos"
+            android:layout_width="match_parent"
+            android:layout_height="85dp"
+            android:orientation="horizontal"
+            android:background="@android:color/black"
+            app:layoutManager="android.support.v7.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toTopOf="@+id/cl_bottom_root" />
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/cl_bottom_root"
+            android:layout_width="match_parent"
+            android:background="@android:color/black"
+            android:layout_height="75dp"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <ImageView
+                android:id="@+id/iv_close"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:scaleType="centerInside"
+                android:src="@mipmap/ic_accid_reset_phone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <ImageView
+                android:id="@+id/iv_take_photo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/ic_accid_take_photo"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/iv_confirm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="25dp"
+                android:scaleType="centerInside"
+                android:src="@mipmap/ic_accid_complate_photo"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </android.support.constraint.ConstraintLayout>
+
+    </android.support.constraint.ConstraintLayout>
+
+
+</LinearLayout>
